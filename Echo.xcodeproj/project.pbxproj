@@ -45,6 +45,8 @@
 		377A5BBC1AF28F91005A50E1 /* EchoUtility.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = EchoUtility.c; sourceTree = "<group>"; };
 		377A5BBD1AF28F91005A50E1 /* EchoUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EchoUtility.h; sourceTree = "<group>"; };
 		377A5BC31AF2911B005A50E1 /* verifykext.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = verifykext.sh; path = Scripts/verifykext.sh; sourceTree = SOURCE_ROOT; };
+		377A5BC41AF29A08005A50E1 /* loadkext.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = loadkext.sh; path = Scripts/loadkext.sh; sourceTree = SOURCE_ROOT; };
+		377A5BC51AF29A55005A50E1 /* unloadkext.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = unloadkext.sh; path = Scripts/unloadkext.sh; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +155,8 @@
 			isa = PBXGroup;
 			children = (
 				377A5BC31AF2911B005A50E1 /* verifykext.sh */,
+				377A5BC41AF29A08005A50E1 /* loadkext.sh */,
+				377A5BC51AF29A55005A50E1 /* unloadkext.sh */,
 			);
 			name = Scripts;
 			path = Echo.xcodeproj;

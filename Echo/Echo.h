@@ -22,6 +22,7 @@
 #define ECHO_OS_MALLOC_TAG  'ohcE'
 
 OSMallocTag gMallocTag = 0;
+unsigned int gSysctlCmd = 0;
 unsigned int gPingCounter = 0;
 
 #endif

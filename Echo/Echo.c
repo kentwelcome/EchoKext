@@ -9,11 +9,11 @@
 #include "Echo.h"
 
 static int SysctlPingFromDaemonHandler(
-                               struct sysctl_oid * oidp,
-                               void *              arg1,
-                               int                 arg2,
-                               struct sysctl_req * req
-                               )
+                                       struct sysctl_oid * oidp,
+                                       void *              arg1,
+                                       int                 arg2,
+                                       struct sysctl_req * req
+                                       )
 {
     int rc = 0;
     
@@ -27,16 +27,47 @@ static int SysctlPingFromDaemonHandler(
     return rc;
 }
 
+static int SysctlResetPingCounter(
+                                  struct sysctl_oid * oidp,
+                                  void *              arg1,
+                                  int                 arg2,
+                                  struct sysctl_req * req
+                                  )
+{
+    int rc = 0;
+    
+    rc = sysctl_handle_long(oidp, arg1, arg2, req);
+    
+    if (rc == 0 && req->newptr != 0) {
+        OSBitAndAtomic(0,&gPingCounter);
+        LOG("Reset ping counter... %d times",gPingCounter);
+    }
+    
+    return rc;
+}
+
 SYSCTL_OID(
            _kern,
            OID_AUTO,
            echokext_ping_from_daemon,
-           CTLTYPE_INT | CTLFLAG_RW | CTLFLAG_KERN,
-           &gPingCounter,
-           sizeof(gPingCounter),
+           CTLFLAG_KERN,
+           &gSysctlCmd,
+           sizeof(gSysctlCmd),
            SysctlPingFromDaemonHandler,
            "UI",
            "Ping Echo kext from daemon"
+           );
+
+SYSCTL_OID(
+           _kern,
+           OID_AUTO,
+           echokext_reset_ping_counter,
+           CTLFLAG_KERN,
+           &gSysctlCmd,
+           sizeof(gSysctlCmd),
+           SysctlResetPingCounter,
+           "UI",
+           "Reset ping counter"
            );
 
 
