@@ -8,16 +8,53 @@
 
 /* Begin PBXBuildFile section */
 		377A5B8B1AF26D5C005A50E1 /* Echo.c in Sources */ = {isa = PBXBuildFile; fileRef = 377A5B8A1AF26D5C005A50E1 /* Echo.c */; };
+		377A5B9B1AF26DB2005A50E1 /* IOKitEcho.h in Headers */ = {isa = PBXBuildFile; fileRef = 377A5B9A1AF26DB2005A50E1 /* IOKitEcho.h */; };
+		377A5B9D1AF26DB2005A50E1 /* IOKitEcho.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 377A5B9C1AF26DB2005A50E1 /* IOKitEcho.cpp */; };
+		377A5BAC1AF26E36005A50E1 /* EchoDeamon.c in Sources */ = {isa = PBXBuildFile; fileRef = 377A5BAB1AF26E36005A50E1 /* EchoDeamon.c */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		377A5BA71AF26E36005A50E1 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		377A5B851AF26D5C005A50E1 /* Echo.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Echo.kext; sourceTree = BUILT_PRODUCTS_DIR; };
 		377A5B891AF26D5C005A50E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		377A5B8A1AF26D5C005A50E1 /* Echo.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Echo.c; sourceTree = "<group>"; };
+		377A5B961AF26DB2005A50E1 /* IOKitEcho.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IOKitEcho.kext; sourceTree = BUILT_PRODUCTS_DIR; };
+		377A5B991AF26DB2005A50E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		377A5B9A1AF26DB2005A50E1 /* IOKitEcho.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IOKitEcho.h; sourceTree = "<group>"; };
+		377A5B9C1AF26DB2005A50E1 /* IOKitEcho.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = IOKitEcho.cpp; sourceTree = "<group>"; };
+		377A5BA91AF26E36005A50E1 /* EchoDaemon */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = EchoDaemon; sourceTree = BUILT_PRODUCTS_DIR; };
+		377A5BAB1AF26E36005A50E1 /* EchoDeamon.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = EchoDeamon.c; sourceTree = "<group>"; };
+		377A5BB01AF27BE6005A50E1 /* Echo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Echo.h; sourceTree = "<group>"; };
+		377A5BB21AF27C5A005A50E1 /* EchoDeamon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EchoDeamon.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		377A5B811AF26D5C005A50E1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		377A5B921AF26DB2005A50E1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		377A5BA61AF26E36005A50E1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -31,6 +68,8 @@
 			isa = PBXGroup;
 			children = (
 				377A5B871AF26D5C005A50E1 /* Echo */,
+				377A5B971AF26DB2005A50E1 /* IOKitEcho */,
+				377A5BAA1AF26E36005A50E1 /* EchoDaemon */,
 				377A5B861AF26D5C005A50E1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -39,6 +78,8 @@
 			isa = PBXGroup;
 			children = (
 				377A5B851AF26D5C005A50E1 /* Echo.kext */,
+				377A5B961AF26DB2005A50E1 /* IOKitEcho.kext */,
+				377A5BA91AF26E36005A50E1 /* EchoDaemon */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -47,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				377A5B8A1AF26D5C005A50E1 /* Echo.c */,
+				377A5BB01AF27BE6005A50E1 /* Echo.h */,
 				377A5B881AF26D5C005A50E1 /* Supporting Files */,
 			);
 			path = Echo;
@@ -60,6 +102,33 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		377A5B971AF26DB2005A50E1 /* IOKitEcho */ = {
+			isa = PBXGroup;
+			children = (
+				377A5B9A1AF26DB2005A50E1 /* IOKitEcho.h */,
+				377A5B9C1AF26DB2005A50E1 /* IOKitEcho.cpp */,
+				377A5B981AF26DB2005A50E1 /* Supporting Files */,
+			);
+			path = IOKitEcho;
+			sourceTree = "<group>";
+		};
+		377A5B981AF26DB2005A50E1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				377A5B991AF26DB2005A50E1 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		377A5BAA1AF26E36005A50E1 /* EchoDaemon */ = {
+			isa = PBXGroup;
+			children = (
+				377A5BAB1AF26E36005A50E1 /* EchoDeamon.c */,
+				377A5BB21AF27C5A005A50E1 /* EchoDeamon.h */,
+			);
+			path = EchoDaemon;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -67,6 +136,14 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		377A5B931AF26DB2005A50E1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				377A5B9B1AF26DB2005A50E1 /* IOKitEcho.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +168,41 @@
 			productReference = 377A5B851AF26D5C005A50E1 /* Echo.kext */;
 			productType = "com.apple.product-type.kernel-extension";
 		};
+		377A5B951AF26DB2005A50E1 /* IOKitEcho */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 377A5B9E1AF26DB2005A50E1 /* Build configuration list for PBXNativeTarget "IOKitEcho" */;
+			buildPhases = (
+				377A5B911AF26DB2005A50E1 /* Sources */,
+				377A5B921AF26DB2005A50E1 /* Frameworks */,
+				377A5B931AF26DB2005A50E1 /* Headers */,
+				377A5B941AF26DB2005A50E1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IOKitEcho;
+			productName = IOKitEcho;
+			productReference = 377A5B961AF26DB2005A50E1 /* IOKitEcho.kext */;
+			productType = "com.apple.product-type.kernel-extension";
+		};
+		377A5BA81AF26E36005A50E1 /* EchoDaemon */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 377A5BAD1AF26E36005A50E1 /* Build configuration list for PBXNativeTarget "EchoDaemon" */;
+			buildPhases = (
+				377A5BA51AF26E36005A50E1 /* Sources */,
+				377A5BA61AF26E36005A50E1 /* Frameworks */,
+				377A5BA71AF26E36005A50E1 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EchoDaemon;
+			productName = EchoDaemon;
+			productReference = 377A5BA91AF26E36005A50E1 /* EchoDaemon */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -101,6 +213,12 @@
 				ORGANIZATIONNAME = KentHuang;
 				TargetAttributes = {
 					377A5B841AF26D5C005A50E1 = {
+						CreatedOnToolsVersion = 6.3.1;
+					};
+					377A5B951AF26DB2005A50E1 = {
+						CreatedOnToolsVersion = 6.3.1;
+					};
+					377A5BA81AF26E36005A50E1 = {
 						CreatedOnToolsVersion = 6.3.1;
 					};
 				};
@@ -118,12 +236,21 @@
 			projectRoot = "";
 			targets = (
 				377A5B841AF26D5C005A50E1 /* Echo */,
+				377A5B951AF26DB2005A50E1 /* IOKitEcho */,
+				377A5BA81AF26E36005A50E1 /* EchoDaemon */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		377A5B831AF26D5C005A50E1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		377A5B941AF26DB2005A50E1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -138,6 +265,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				377A5B8B1AF26D5C005A50E1 /* Echo.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		377A5B911AF26DB2005A50E1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				377A5B9D1AF26DB2005A50E1 /* IOKitEcho.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		377A5BA51AF26E36005A50E1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				377A5BAC1AF26E36005A50E1 /* EchoDeamon.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,7 +367,6 @@
 		377A5B8F1AF26D5C005A50E1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "Developer ID";
 				INFOPLIST_FILE = Echo/Info.plist;
 				MODULE_NAME = org.debugkernel.Echo;
 				MODULE_START = Echo_start;
@@ -238,7 +380,6 @@
 		377A5B901AF26D5C005A50E1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "Developer ID";
 				INFOPLIST_FILE = Echo/Info.plist;
 				MODULE_NAME = org.debugkernel.Echo;
 				MODULE_START = Echo_start;
@@ -246,6 +387,54 @@
 				MODULE_VERSION = 1.0.0d1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = kext;
+			};
+			name = Release;
+		};
+		377A5B9F1AF26DB2005A50E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1.0.0d1;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = IOKitEcho/Info.plist;
+				MODULE_NAME = org.debugkernel.IOKitEcho;
+				MODULE_VERSION = 1.0.0d1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = kext;
+			};
+			name = Debug;
+		};
+		377A5BA01AF26DB2005A50E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1.0.0d1;
+				INFOPLIST_FILE = IOKitEcho/Info.plist;
+				MODULE_NAME = org.debugkernel.IOKitEcho;
+				MODULE_VERSION = 1.0.0d1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = kext;
+			};
+			name = Release;
+		};
+		377A5BAE1AF26E36005A50E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		377A5BAF1AF26E36005A50E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -266,6 +455,22 @@
 			buildConfigurations = (
 				377A5B8F1AF26D5C005A50E1 /* Debug */,
 				377A5B901AF26D5C005A50E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		377A5B9E1AF26DB2005A50E1 /* Build configuration list for PBXNativeTarget "IOKitEcho" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				377A5B9F1AF26DB2005A50E1 /* Debug */,
+				377A5BA01AF26DB2005A50E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		377A5BAD1AF26E36005A50E1 /* Build configuration list for PBXNativeTarget "EchoDaemon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				377A5BAE1AF26E36005A50E1 /* Debug */,
+				377A5BAF1AF26E36005A50E1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
