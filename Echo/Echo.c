@@ -50,7 +50,7 @@ SYSCTL_OID(
            _kern,
            OID_AUTO,
            echokext_ping_from_daemon,
-           CTLFLAG_KERN,
+           CTLTYPE_INT | CTLFLAG_RW | CTLFLAG_KERN,
            &gSysctlCmd,
            sizeof(gSysctlCmd),
            SysctlPingFromDaemonHandler,
@@ -62,7 +62,7 @@ SYSCTL_OID(
            _kern,
            OID_AUTO,
            echokext_reset_ping_counter,
-           CTLFLAG_KERN,
+           CTLTYPE_INT | CTLFLAG_RW | CTLFLAG_KERN,
            &gSysctlCmd,
            sizeof(gSysctlCmd),
            SysctlResetPingCounter,
@@ -73,6 +73,7 @@ SYSCTL_OID(
 
 static struct sysctl_oid *sysctlHandlerTable[] = {
     &sysctl__kern_echokext_ping_from_daemon,
+    &sysctl__kern_echokext_reset_ping_counter,
     NULL
 };
 
