@@ -37,6 +37,7 @@
 		377A5BAB1AF26E36005A50E1 /* EchoDeamon.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = EchoDeamon.c; sourceTree = "<group>"; };
 		377A5BB01AF27BE6005A50E1 /* Echo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Echo.h; sourceTree = "<group>"; };
 		377A5BB21AF27C5A005A50E1 /* EchoDeamon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EchoDeamon.h; sourceTree = "<group>"; };
+		377A5BB31AF27EE5005A50E1 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +68,7 @@
 		377A5B7B1AF26D5C005A50E1 = {
 			isa = PBXGroup;
 			children = (
+				377A5BB31AF27EE5005A50E1 /* README.md */,
 				377A5B871AF26D5C005A50E1 /* Echo */,
 				377A5B971AF26DB2005A50E1 /* IOKitEcho */,
 				377A5BAA1AF26E36005A50E1 /* EchoDaemon */,
