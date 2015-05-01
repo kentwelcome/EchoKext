@@ -110,6 +110,78 @@ kern_return_t UnregisterSysctlInterfaces()
     return KERN_SUCCESS;
 }
 
+#pragma mark -
+
+errno_t KeCtlSetHandler( kern_ctl_ref ctlref, unsigned int unit, void *userdata, int opt, void *data, size_t len )
+{
+    LOG(">>> KeCtlSetHandler");
+    return KERN_SUCCESS;
+}
+
+errno_t KeCtlGetHandler(kern_ctl_ref ctlref, unsigned int unit, void *userdata, int opt, void *data, size_t *len)
+{
+    LOG(">>> KeCtlGetHandler");
+    return KERN_SUCCESS;
+}
+
+errno_t KeCtlConnectHandler(kern_ctl_ref ctlref, struct sockaddr_ctl *sac, void **unitinfo)
+{
+    LOG(">>> KeCtlConnectionHandler");
+    return KERN_SUCCESS;
+}
+
+errno_t KeCtlDisconnectHandler(kern_ctl_ref ctlref, unsigned int unit, void *unitinfo)
+{
+    LOG(">>> LeCtlDisconnectHandler");
+    return KERN_SUCCESS;
+}
+
+errno_t KeCtlSendHandler(kern_ctl_ref ctlref, unsigned int unit, void *userdata, mbuf_t m, int flags)
+{
+    LOG(">>> KeCtlSendHandler");
+    return KERN_SUCCESS;
+}
+
+
+
+void InitializateKernCtlConnection()
+{
+    errno_t err;
+    LOG("Initializate KerCtlConnection...");
+    
+    bzero(&gKeCtlReg, sizeof(KERN_CTL_REG));
+    gKeCtlReg.ctl_id    = ECHO_ID;
+    gKeCtlReg.ctl_unit  = ECHO_UNIT;
+    strncpy( gKeCtlReg.ctl_name, EXHO_CTL_NAME, strlen(EXHO_CTL_NAME));
+    gKeCtlReg.ctl_flags         = CTL_FLAG_PRIVILEGED & CTL_FLAG_REG_ID_UNIT;
+    gKeCtlReg.ctl_send          = KeCtlSendHandler;
+    gKeCtlReg.ctl_getopt        = KeCtlGetHandler;
+    gKeCtlReg.ctl_setopt        = KeCtlSetHandler;
+    gKeCtlReg.ctl_connect       = KeCtlConnectHandler;
+    gKeCtlReg.ctl_disconnect    = KeCtlDisconnectHandler;
+    
+    err = ctl_register(&gKeCtlReg, &gKeCtlRef);
+    if (err == KERN_SUCCESS) {
+        LOG("Register KerCtlConnection success: id=%d",gKeCtlReg.ctl_id);
+    }
+    else {
+        LOG("Fail to register: err=%d",err);
+    }
+}
+
+void DeinitializateKernCtlConnection()
+{
+    errno_t err;
+    LOG("Deinitializate KernCtlConnection...");
+    err = ctl_deregister(gKeCtlRef);
+    if (err == 0) {
+        gKeCtlRef = NULL;
+    }
+    else {
+        LOG("Fail to deregister: err=%d",err);
+    }
+}
+
 kern_return_t Echo_start(kmod_info_t * ki, void *d);
 kern_return_t Echo_stop(kmod_info_t *ki, void *d);
 
@@ -127,6 +199,10 @@ kern_return_t Echo_start(kmod_info_t * ki, void *d)
         RegisterSysctlInterfaces();
     }
     
+    if (status == KERN_SUCCESS) {
+        InitializateKernCtlConnection();
+    }
+    
     if (status != KERN_SUCCESS) {
         LOGE("Fail to start kext");
         Echo_stop(ki, d);
@@ -137,6 +213,10 @@ kern_return_t Echo_start(kmod_info_t * ki, void *d)
 kern_return_t Echo_stop(kmod_info_t *ki, void *d)
 {
     LOG("Stop kext..");
+    
+    if (gKeCtlRef != NULL) {
+        DeinitializateKernCtlConnection();
+    }
     
     UnregisterSysctlInterfaces();
     

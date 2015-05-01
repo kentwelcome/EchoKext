@@ -10,11 +10,12 @@
 		377A5B8B1AF26D5C005A50E1 /* Echo.c in Sources */ = {isa = PBXBuildFile; fileRef = 377A5B8A1AF26D5C005A50E1 /* Echo.c */; };
 		377A5B9B1AF26DB2005A50E1 /* IOKitEcho.h in Headers */ = {isa = PBXBuildFile; fileRef = 377A5B9A1AF26DB2005A50E1 /* IOKitEcho.h */; };
 		377A5B9D1AF26DB2005A50E1 /* IOKitEcho.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 377A5B9C1AF26DB2005A50E1 /* IOKitEcho.cpp */; };
-		377A5BAC1AF26E36005A50E1 /* EchoDeamon.c in Sources */ = {isa = PBXBuildFile; fileRef = 377A5BAB1AF26E36005A50E1 /* EchoDeamon.c */; };
+		377A5BAC1AF26E36005A50E1 /* EchoDaemon.c in Sources */ = {isa = PBXBuildFile; fileRef = 377A5BAB1AF26E36005A50E1 /* EchoDaemon.c */; };
 		377A5BBE1AF28F91005A50E1 /* EchoUtility.c in Sources */ = {isa = PBXBuildFile; fileRef = 377A5BBC1AF28F91005A50E1 /* EchoUtility.c */; };
 		377A5BBF1AF28F91005A50E1 /* EchoUtility.c in Sources */ = {isa = PBXBuildFile; fileRef = 377A5BBC1AF28F91005A50E1 /* EchoUtility.c */; };
 		377A5BC01AF28F91005A50E1 /* EchoUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 377A5BBD1AF28F91005A50E1 /* EchoUtility.h */; };
 		377A5BC11AF28F91005A50E1 /* EchoUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 377A5BBD1AF28F91005A50E1 /* EchoUtility.h */; };
+		377A5BC71AF37518005A50E1 /* EchoKernelControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 377A5BC61AF37518005A50E1 /* EchoKernelControl.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -37,16 +38,17 @@
 		377A5B991AF26DB2005A50E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		377A5B9A1AF26DB2005A50E1 /* IOKitEcho.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IOKitEcho.h; sourceTree = "<group>"; };
 		377A5B9C1AF26DB2005A50E1 /* IOKitEcho.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = IOKitEcho.cpp; sourceTree = "<group>"; };
-		377A5BA91AF26E36005A50E1 /* EchoDaemon */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = EchoDaemon; sourceTree = BUILT_PRODUCTS_DIR; };
-		377A5BAB1AF26E36005A50E1 /* EchoDeamon.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = EchoDeamon.c; sourceTree = "<group>"; };
+		377A5BA91AF26E36005A50E1 /* esender */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = esender; sourceTree = BUILT_PRODUCTS_DIR; };
+		377A5BAB1AF26E36005A50E1 /* EchoDaemon.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = EchoDaemon.c; sourceTree = "<group>"; };
 		377A5BB01AF27BE6005A50E1 /* Echo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Echo.h; sourceTree = "<group>"; };
-		377A5BB21AF27C5A005A50E1 /* EchoDeamon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EchoDeamon.h; sourceTree = "<group>"; };
+		377A5BB21AF27C5A005A50E1 /* EchoDaemon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EchoDaemon.h; sourceTree = "<group>"; };
 		377A5BB31AF27EE5005A50E1 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		377A5BBC1AF28F91005A50E1 /* EchoUtility.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = EchoUtility.c; sourceTree = "<group>"; };
 		377A5BBD1AF28F91005A50E1 /* EchoUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EchoUtility.h; sourceTree = "<group>"; };
 		377A5BC31AF2911B005A50E1 /* verifykext.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = verifykext.sh; path = Scripts/verifykext.sh; sourceTree = SOURCE_ROOT; };
 		377A5BC41AF29A08005A50E1 /* loadkext.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = loadkext.sh; path = Scripts/loadkext.sh; sourceTree = SOURCE_ROOT; };
 		377A5BC51AF29A55005A50E1 /* unloadkext.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = unloadkext.sh; path = Scripts/unloadkext.sh; sourceTree = SOURCE_ROOT; };
+		377A5BC61AF37518005A50E1 /* EchoKernelControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EchoKernelControl.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,7 +94,7 @@
 			children = (
 				377A5B851AF26D5C005A50E1 /* Echo.kext */,
 				377A5B961AF26DB2005A50E1 /* IOKitEcho.kext */,
-				377A5BA91AF26E36005A50E1 /* EchoDaemon */,
+				377A5BA91AF26E36005A50E1 /* esender */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -136,8 +138,8 @@
 		377A5BAA1AF26E36005A50E1 /* EchoDaemon */ = {
 			isa = PBXGroup;
 			children = (
-				377A5BAB1AF26E36005A50E1 /* EchoDeamon.c */,
-				377A5BB21AF27C5A005A50E1 /* EchoDeamon.h */,
+				377A5BAB1AF26E36005A50E1 /* EchoDaemon.c */,
+				377A5BB21AF27C5A005A50E1 /* EchoDaemon.h */,
 			);
 			path = EchoDaemon;
 			sourceTree = "<group>";
@@ -147,6 +149,7 @@
 			children = (
 				377A5BBC1AF28F91005A50E1 /* EchoUtility.c */,
 				377A5BBD1AF28F91005A50E1 /* EchoUtility.h */,
+				377A5BC61AF37518005A50E1 /* EchoKernelControl.h */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -169,6 +172,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				377A5BC71AF37518005A50E1 /* EchoKernelControl.h in Headers */,
 				377A5BC01AF28F91005A50E1 /* EchoUtility.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -235,7 +239,7 @@
 			);
 			name = EchoDaemon;
 			productName = EchoDaemon;
-			productReference = 377A5BA91AF26E36005A50E1 /* EchoDaemon */;
+			productReference = 377A5BA91AF26E36005A50E1 /* esender */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -317,7 +321,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				377A5BAC1AF26E36005A50E1 /* EchoDeamon.c in Sources */,
+				377A5BAC1AF26E36005A50E1 /* EchoDaemon.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,14 +474,14 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = esender;
 			};
 			name = Debug;
 		};
 		377A5BAF1AF26E36005A50E1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = esender;
 			};
 			name = Release;
 		};
