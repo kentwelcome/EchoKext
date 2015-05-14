@@ -9,12 +9,12 @@
 #ifndef __Echo__EchoUtility__
 #define __Echo__EchoUtility__
 
-#include <libkern/libkern.h>
 #include <sys/proc.h>
 
 void PrintCurrentProcess(void);
 
 #ifdef KEXT
+#include <libkern/libkern.h>
 
 #define LOG(...)    PrintCurrentProcess();printf("Echo: " __VA_ARGS__); printf("\n");
 #define LOGE(...)   PrintCurrentProcess;printf("Echo: [Error] " __VA_ARGS__); printf("\n");
@@ -24,8 +24,8 @@ void PrintCurrentProcess(void);
 
 #include <IOKit/IOLib.h>
 
-#define LOG(...)    PrintCurrentProcess;IOLog("Echo: " __VA_ARGS__); IOLog("\n");
-#define LOGE(...)   PrintCurrentProcess;IOLog("Echo: [Error] " __VA_ARGS__); IOLog("\n");
+#define LOG(...)    PrintCurrentProcess;IOLog("IOKitEcho: " __VA_ARGS__); IOLog("\n");
+#define LOGE(...)   PrintCurrentProcess;IOLog("IOKitEcho: [Error] " __VA_ARGS__); IOLog("\n");
 
 #endif
 

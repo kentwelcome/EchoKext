@@ -445,6 +445,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
+					IOKIT_KEXT,
 				);
 				INFOPLIST_FILE = IOKitEcho/Info.plist;
 				MODULE_NAME = org.debugkernel.IOKitEcho;
