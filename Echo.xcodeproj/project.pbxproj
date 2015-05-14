@@ -16,6 +16,8 @@
 		377A5BC01AF28F91005A50E1 /* EchoUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 377A5BBD1AF28F91005A50E1 /* EchoUtility.h */; };
 		377A5BC11AF28F91005A50E1 /* EchoUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 377A5BBD1AF28F91005A50E1 /* EchoUtility.h */; };
 		377A5BC71AF37518005A50E1 /* EchoKernelControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 377A5BC61AF37518005A50E1 /* EchoKernelControl.h */; };
+		37C4C78E1B04F8B800617ADC /* EchoDriverClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 37C4C78C1B04F8B800617ADC /* EchoDriverClient.cpp */; };
+		37C4C78F1B04F8B800617ADC /* EchoDriverClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 37C4C78D1B04F8B800617ADC /* EchoDriverClient.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -49,6 +51,8 @@
 		377A5BC41AF29A08005A50E1 /* loadkext.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = loadkext.sh; path = Scripts/loadkext.sh; sourceTree = SOURCE_ROOT; };
 		377A5BC51AF29A55005A50E1 /* unloadkext.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = unloadkext.sh; path = Scripts/unloadkext.sh; sourceTree = SOURCE_ROOT; };
 		377A5BC61AF37518005A50E1 /* EchoKernelControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EchoKernelControl.h; sourceTree = "<group>"; };
+		37C4C78C1B04F8B800617ADC /* EchoDriverClient.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EchoDriverClient.cpp; sourceTree = "<group>"; };
+		37C4C78D1B04F8B800617ADC /* EchoDriverClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EchoDriverClient.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,8 +124,10 @@
 		377A5B971AF26DB2005A50E1 /* IOKitEcho */ = {
 			isa = PBXGroup;
 			children = (
-				377A5B9A1AF26DB2005A50E1 /* IOKitEcho.h */,
+				37C4C78C1B04F8B800617ADC /* EchoDriverClient.cpp */,
+				37C4C78D1B04F8B800617ADC /* EchoDriverClient.h */,
 				377A5B9C1AF26DB2005A50E1 /* IOKitEcho.cpp */,
+				377A5B9A1AF26DB2005A50E1 /* IOKitEcho.h */,
 				377A5B981AF26DB2005A50E1 /* Supporting Files */,
 			);
 			path = IOKitEcho;
@@ -182,6 +188,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				377A5BC11AF28F91005A50E1 /* EchoUtility.h in Headers */,
+				37C4C78F1B04F8B800617ADC /* EchoDriverClient.h in Headers */,
 				377A5B9B1AF26DB2005A50E1 /* IOKitEcho.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -313,6 +320,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				377A5B9D1AF26DB2005A50E1 /* IOKitEcho.cpp in Sources */,
+				37C4C78E1B04F8B800617ADC /* EchoDriverClient.cpp in Sources */,
 				377A5BBF1AF28F91005A50E1 /* EchoUtility.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

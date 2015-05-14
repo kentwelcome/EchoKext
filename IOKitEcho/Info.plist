@@ -32,6 +32,8 @@
 			<string>IOResources</string>
 			<key>IOResourceMatch</key>
 			<string>IOKit</string>
+			<key>IOUserClientClass</key>
+			<string>EchoDriverClient</string>
 		</dict>
 	</dict>
 	<key>NSHumanReadableCopyright</key>
