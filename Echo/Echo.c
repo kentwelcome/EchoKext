@@ -16,12 +16,20 @@ static int SysctlPingFromDaemonHandler(
                                        )
 {
     int rc = 0;
+    ECHO_CMD cmd = {0};
     
     rc = sysctl_handle_long(oidp, arg1, arg2, req);
     
     if (rc == 0 && req->newptr != 0) {
         OSIncrementAtomic(&gPingCounter);
         LOG("Ping from daemon... %d times",gPingCounter);
+        if (gKeCtlConnected == 1) {
+            LOG("Send from kernel...");
+            cmd.size = sizeof(cmd);
+            cmd.cmd_type = EchoCmdMsg;
+            strncpy(cmd.data, "send from kernel", strlen("send from kernel"));
+            ctl_enqueuedata(gKeCtlRef,gKeCtlSacUnit,&cmd,sizeof(cmd),0);
+        }
     }
     
     return rc;
@@ -127,12 +135,17 @@ errno_t KeCtlGetHandler(kern_ctl_ref ctlref, unsigned int unit, void *userdata, 
 errno_t KeCtlConnectHandler(kern_ctl_ref ctlref, struct sockaddr_ctl *sac, void **unitinfo)
 {
     LOG(">>> KeCtlConnectionHandler");
+    gKeCtlConnected = 1;
+    gKeCtlSacUnit = sac->sc_unit;
+    
     return KERN_SUCCESS;
 }
 
 errno_t KeCtlDisconnectHandler(kern_ctl_ref ctlref, unsigned int unit, void *unitinfo)
 {
     LOG(">>> LeCtlDisconnectHandler");
+    gKeCtlConnected = 0;
+    gKeCtlSacUnit = 0;
     return KERN_SUCCESS;
 }
 

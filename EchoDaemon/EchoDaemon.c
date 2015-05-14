@@ -28,11 +28,22 @@ void ShowUsage(const char *deamonName)
     printf("Usage: %s id\n",deamonName);
 }
 
+int fd = 0;
+
+void disconnectWithKernel()
+{
+    printf("[\033[0;32mo\033[0m] Disconnect to kernel...\n");
+    shutdown(fd, SHUT_RDWR);
+}
+
 int main(int argc, const char * argv[]) {
     int id = 0;
     int rc = 0;
-    int fd = 0;
+    int terminate = 0;
     struct sockaddr_ctl addr;
+    ssize_t  recvSize = 0;
+    ECHO_CMD sendData;
+    ECHO_CMD recvData;
     
     // Init
     bzero(&addr, sizeof(addr));
@@ -69,6 +80,23 @@ int main(int argc, const char * argv[]) {
         printf("[\033[0;31mx\033[0m] Fail to send command to kernel... rc=%d\n",rc);
     }
     printf("[\033[0;32mo\033[0m] Send command to kernel... rc=%d\n",rc);
+    
+    signal(SIGTERM, disconnectWithKernel);
+    signal(SIGINT, disconnectWithKernel);
+    
+    while (terminate == 0) {
+        recvSize = recv(fd, &recvData, sizeof(recvData), 0);
+        if (recvSize > 0) {
+            printf(" <recv> CMD: %x Data: %s\n",recvData.cmd_type,recvData.data);
+            if (recvData.cmd_type == EchoCmdQuit) {
+                terminate = 1;
+            }
+        }
+        else {
+            printf("    Disconnect send from kernel...\n");
+            terminate = 1;
+        }
+    }
     
     shutdown(fd, SHUT_RDWR);
     printf("[\033[0;32mo\033[0m] Disconnect to kernel...\n");    

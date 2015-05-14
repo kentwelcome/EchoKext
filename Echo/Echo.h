@@ -29,6 +29,8 @@ typedef kern_ctl_ref        KERN_CTL_REF;
 OSMallocTag gMallocTag = 0;
 unsigned int gSysctlCmd = 0;
 unsigned int gPingCounter = 0;
+unsigned int gKeCtlConnected = 0;
+unsigned int gKeCtlSacUnit = 0;
 
 // Connect to User space
 KERN_CTL_REG gKeCtlReg = {0};

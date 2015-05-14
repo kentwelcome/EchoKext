@@ -14,4 +14,20 @@
 #define ECHO_ID     0
 #define ECHO_UNIT   0
 
+#define ECHO_CMD_INIT   0
+#define ECHO_CMD_MSG    1
+#define ECHO_CMD_QUIT   2
+
+typedef enum {
+    EchoCmdInit = 0,
+    EchoCmdMsg,
+    EchoCmdQuit
+} ECHO_CMD_TYPE;
+
+typedef struct {
+    unsigned int    size;
+    ECHO_CMD_TYPE   cmd_type;
+    char            data[256];
+} ECHO_CMD, *PECHO_CMD;
+
 #endif
